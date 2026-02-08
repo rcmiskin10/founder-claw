@@ -1,18 +1,18 @@
--- Entity Table: AI Co-founders
+-- Entity Table: AI Co-founder Instances
 -- Auto-generated from IdeaLaunch pipeline
 
 CREATE TABLE IF NOT EXISTS public.entities (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE NOT NULL,
 
-  -- AI Co-founder fields
-  name TEXT NOT NULL,
-  status TEXT NOT NULL DEFAULT 'configuring',
-  connected_channels TEXT[] NOT NULL,
-  subscription_tier TEXT NOT NULL DEFAULT 'Starter',
-  api_key_status TEXT NOT NULL DEFAULT 'missing',
+  -- AI Co-founder Instance fields
+  instance_name TEXT NOT NULL,
+  messaging_channel TEXT NOT NULL,
+  current_tier TEXT NOT NULL DEFAULT 'Starter',
+  api_key_connected BOOLEAN DEFAULT FALSE NOT NULL,
+  stripe_account_id TEXT,
   business_description TEXT,
-  custom_skills TEXT[],
+  skills_enabled TEXT[] NOT NULL,
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS public.entities (
 
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_entities_user_id ON public.entities(user_id);
-CREATE INDEX IF NOT EXISTS idx_entities_status ON public.entities(status);
+
 CREATE INDEX IF NOT EXISTS idx_entities_created_at ON public.entities(created_at DESC);
 
 -- Auto-update updated_at trigger
