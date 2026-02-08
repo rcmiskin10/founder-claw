@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'FounderClaw - Your 24/7 AI co-founder, managed and always on',
-  description: 'Managed OpenClaw hosting for indie hackers — a 24/7 AI co-founder on Telegram, Discord, and WhatsApp.',
+  title: 'FounderClaw - Your AI co-founder that never sleeps',
+  description: 'Managed OpenClaw hosting for indie hackers — a 24/7 AI co-founder in your messaging apps, zero DevOps required.',
 };
 
 export default function RootLayout({

@@ -23,7 +23,7 @@ export interface FeaturesConfig {
 export const featuresConfig: FeaturesConfig = {
   admin: true,
   ai: true,
-  aiChat: true,
+  aiChat: false,
   analytics: true,
   api: false,
   auth: true,

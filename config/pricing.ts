@@ -24,58 +24,48 @@ export const pricingConfig: {
   model: 'free-trial',
 
   defaultLimits: {
-    ai_co_founders: 0,
-    channels: 0,
-    messages_per_day: 10
+    entities: 1
   },
 
   plans: [
     {
       id: 'starter',
       name: 'Starter',
-      description: 'For pre-revenue founders exploring ideas and validating with their first AI co-founder.',
-      price: { monthly: 19, yearly: 180 },
+      description: 'For side-project builders and pre-revenue founders exploring ideas',
+      price: { monthly: 19, yearly: 182 },
       priceId: process.env.STRIPE_PRICE_STARTER,
       limits: {
-        ai_co_founders: 1,
-        channels: 1,
-        messages_per_day: 200
+        entities: 1
       },
       features: [
-        '1 project / AI co-founder',
-        '1 messaging channel (Telegram or Discord)',
-        '200 messages per day',
+        '500 messages per day',
+        '1 messaging platform (Telegram, Discord, or WhatsApp)',
         'IHVF idea validation framework',
-        'Landing page roasting',
-        'Basic tweet drafting',
-        'Weekly MRR digest (Stripe connected)',
-        'Encrypted API key storage',
-        'Per-user container isolation'
+        'Build-in-public tweet drafting',
+        'Basic landing page roasting',
+        'Community support',
+        'BYOK — bring your own API key'
       ],
       cta: 'Start 7-Day Free Trial',
     },
     {
       id: 'pro',
       name: 'Pro',
-      description: 'For active indie hackers with launched products — your full-stack AI co-founder.',
-      price: { monthly: 29, yearly: 288 },
+      description: 'For active indie hackers with launched products generating early revenue',
+      price: { monthly: 29, yearly: 278 },
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
-        ai_co_founders: 3,
-        channels: 3,
-        messages_per_day: -1
+        entities: 2
       },
       features: [
-        '3 projects / AI co-founders',
-        '3 messaging channels',
         'Unlimited messages',
-        'Daily MRR alerts & revenue insights',
+        '2 messaging platforms',
+        'Everything in Starter',
+        'Stripe MRR tracking with daily alerts',
         'Competitor monitoring (3 competitors)',
-        'Full build-in-public content suite',
-        'Product Hunt launch kit generator',
-        'Cold outreach sequences (50/mo)',
-        'Priority response times',
-        'All Starter features included'
+        'Product Hunt launch kit generation',
+        'Cold outreach sequence drafting',
+        'Priority support'
       ],
       highlighted: true,
       cta: 'Start 7-Day Free Trial',
@@ -83,26 +73,22 @@ export const pricingConfig: {
     {
       id: 'founder',
       name: 'Founder',
-      description: 'For serious solo founders and portfolio operators scaling multiple products.',
-      price: { monthly: 49, yearly: 468 },
+      description: 'For serious solo founders and small teams scaling past $1K MRR',
+      price: { monthly: 49, yearly: 470 },
       priceId: process.env.STRIPE_PRICE_FOUNDER,
       limits: {
-        ai_co_founders: -1,
-        channels: -1,
-        messages_per_day: -1
+        entities: -1
       },
       features: [
-        'Unlimited projects / AI co-founders',
-        'Unlimited messaging channels',
         'Unlimited messages',
-        'Real-time MRR alerts & deep analytics',
-        'Competitor monitoring (10 competitors)',
-        'Advanced outreach sequences (200/mo)',
-        'Custom skill creation',
+        'All messaging platforms',
+        'Everything in Pro',
+        'Unlimited competitor monitoring',
+        'Weekly AI strategy briefs',
+        'Custom skill installation',
         'API access for integrations',
         'White-glove onboarding call',
-        'Priority support (< 4hr response)',
-        'All Pro features included'
+        'Priority feature requests'
       ],
       cta: 'Start 7-Day Free Trial',
     }
