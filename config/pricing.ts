@@ -24,105 +24,89 @@ export const pricingConfig: {
   model: 'freemium',
 
   defaultLimits: {
-    competitors: 0,
-    entities: 15,
-    ihvf_sessions: 3,
-    landing_page_roasts: 2
+    content_drafts_per_week: 3,
+    entities: 50,
+    interactions_per_day: 30,
+    landing_page_roasts_per_month: 1,
+    validations_per_week: 1
   },
 
   plans: [
     {
       id: 'free',
-      name: 'Free',
-      description: 'Try your AI co-founder with basic features',
+      name: 'Hacker',
+      description: 'Experience your AI co-founder with essential features — free forever',
       price: { monthly: 0 },
       limits: {
-        competitors: 0,
-        entities: 15,
-        ihvf_sessions: 3,
-        landing_page_roasts: 2
+        content_drafts_per_week: 3,
+        entities: 50,
+        interactions_per_day: 30,
+        landing_page_roasts_per_month: 1,
+        validations_per_week: 1
       },
       features: [
-        'Telegram bot connection',
-        '3 IHVF idea validation sessions/month',
-        '2 landing page roasts/month',
-        'Weekly MRR summary email',
-        'Basic startup context memory'
+        '30 AI interactions per day',
+        '1 idea validation per week (IHVF)',
+        '3 build-in-public drafts per week',
+        '1 landing page roast per month',
+        'Daily MRR summary via Stripe',
+        'Telegram bot access',
+        'Persistent startup context'
       ],
       cta: 'Get Started Free',
     },
     {
-      id: 'solo-founder',
-      name: 'Solo Founder',
-      description: 'Everything you need to build and ship solo',
-      price: { monthly: 29, yearly: 249 },
-      priceId: process.env.STRIPE_PRICE_SOLO_FOUNDER,
+      id: 'founder',
+      name: 'Founder',
+      description: 'Unlimited AI co-founder power for serious builders',
+      price: { monthly: 19, yearly: 149 },
+      priceId: process.env.STRIPE_PRICE_FOUNDER,
       limits: {
-        competitors: 3,
+        content_drafts_per_week: -1,
         entities: -1,
-        ihvf_sessions: -1,
-        landing_page_roasts: -1
+        interactions_per_day: -1,
+        landing_page_roasts_per_month: 5,
+        validations_per_week: -1
       },
       features: [
-        'Unlimited IHVF validation sessions',
-        'Full Stripe integration with daily MRR alerts',
-        'Unlimited landing page roasting',
-        'Build-in-public content drafting (10 posts/week)',
-        'Basic competitor monitoring (3 competitors)',
-        'Launch kit generation',
+        'Unlimited AI interactions',
+        'Unlimited IHVF idea validations',
+        'Unlimited build-in-public drafts',
+        '5 landing page roasts per month',
+        '2 launch kit generations per month',
+        'Real-time MRR alerts & revenue insights',
+        'Competitor monitoring (3 competitors)',
         'All chat platforms (Telegram, Discord, WhatsApp)',
-        'Persistent startup context memory'
+        'Priority response times'
       ],
       highlighted: true,
       cta: 'Start Building',
     },
     {
-      id: 'serious-builder',
-      name: 'Serious Builder',
-      description: 'For founders scaling past their first $1K MRR',
-      price: { monthly: 59, yearly: 499 },
-      priceId: process.env.STRIPE_PRICE_SERIOUS_BUILDER,
+      id: 'founder-pro',
+      name: 'Founder Pro',
+      description: 'Maximum firepower for multi-project founders and power users',
+      price: { monthly: 39, yearly: 299 },
+      priceId: process.env.STRIPE_PRICE_FOUNDER_PRO,
       limits: {
-        competitors: 10,
+        content_drafts_per_week: -1,
         entities: -1,
-        ihvf_sessions: -1,
-        landing_page_roasts: -1
+        interactions_per_day: -1,
+        landing_page_roasts_per_month: -1,
+        validations_per_week: -1
       },
       features: [
-        'Everything in Solo Founder',
-        'Advanced competitor monitoring (10 competitors)',
-        'Real-time competitor alerts',
-        'Priority AI responses',
-        'Custom skill creation',
-        'Multi-product support (up to 3 products)',
-        'Weekly strategic review sessions',
-        'API access for custom integrations'
+        'Everything in Founder, plus:',
+        'Unlimited landing page roasts',
+        'Unlimited launch kit generations',
+        'Competitor monitoring (10 competitors)',
+        'Advanced revenue analytics & churn prediction',
+        'Custom AI skill/workflow creation',
+        'API access for integrations',
+        'Early access to new features',
+        'Dedicated support channel'
       ],
-      cta: 'Level Up',
-    },
-    {
-      id: 'studio',
-      name: 'Studio / Agency',
-      description: 'For teams shipping multiple products',
-      price: { monthly: 149, yearly: 1249 },
-      priceId: process.env.STRIPE_PRICE_STUDIO,
-      limits: {
-        competitors: -1,
-        entities: -1,
-        ihvf_sessions: -1,
-        landing_page_roasts: -1
-      },
-      features: [
-        'Everything in Serious Builder',
-        'Unlimited products & competitors',
-        'Team collaboration (up to 5 users)',
-        'White-label options',
-        'Dedicated priority support',
-        'Custom framework integration',
-        'Bulk launch kit generation',
-        'Priority feature requests'
-      ],
-      cta: 'Contact Sales',
+      cta: 'Go Pro',
     }
   ],
 }

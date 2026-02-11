@@ -56,8 +56,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'FounderClaw',
-  tagline: 'Your AI co-founder, living in your chat app',
-  description: 'A managed AI co-founder in Telegram that validates ideas, tracks MRR, and drafts content for indie hackers.',
+  tagline: 'Your AI co-founder that lives in your chat app',
+  description: 'A managed AI co-founder for indie hackers — idea validation, MRR tracking, and launch tools in Telegram.',
   url: process.env.NEXT_PUBLIC_APP_URL
     || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
     || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
@@ -67,63 +67,64 @@ export const siteConfig: SiteConfig = {
   mainNav: [
     { title: 'Features', href: '/features' },
     { title: 'Pricing', href: '/pricing' },
-    { title: 'FAQ', href: '/#faq' },
-    { title: 'Blog', href: '/blog' }
+    { title: 'How It Works', href: '/features#how-it-works' },
+    { title: 'FAQ', href: '/pricing#faq' }
   ],
 
   dashboardNav: [
     { title: 'Dashboard', href: '/dashboard' },
     { title: 'Interactions', href: '/dashboard/entities' },
-    { title: 'Integrations', href: '/dashboard/integrations' },
+    { title: 'Connect Chat', href: '/dashboard/integrations' },
+    { title: 'Stripe', href: '/dashboard/stripe' },
     { title: 'Settings', href: '/dashboard/settings' }
   ],
 
   hero: {
     badge: 'Powered by OpenClaw — Zero DevOps',
-    headline: 'Your AI Co-Founder Lives',
-    headlineHighlight: 'Inside Your Telegram',
-    subheadline: 'FounderClaw is a managed AI co-founder built for indie hackers. It validates your ideas with the IHVF framework, sends daily MRR alerts from Stripe, drafts build-in-public content, roasts your landing page, and monitors competitors — all from a single chat conversation that remembers everything about your startup.',
+    headline: 'Your AI Co-Founder That Lives',
+    headlineHighlight: 'In Your Chat App',
+    subheadline: 'FounderClaw is a managed AI co-founder built for indie hackers and solo founders. It lives in Telegram, connects to your Stripe, validates your ideas with the IHVF framework, drafts your build-in-public content, roasts your landing page, and sends you daily MRR alerts — all without touching a Docker config.',
     primaryCta: { text: 'Get Started Free', href: '/register' },
     secondaryCta: { text: 'See How It Works', href: '/features' },
-    socialProof: { text: 'Trusted by 500+ indie hackers', rating: '4.9/5' },
+    socialProof: { text: 'Trusted by 500+ indie hackers building in public', rating: '4.9/5' },
   },
 
   features: [
     {
       icon: Lightbulb,
       title: 'IHVF Idea Validation',
-      description: 'Walk through structured Idea-Hypothesis-Validation-Feedback sessions that challenge your assumptions and de-risk your next build before you write a single line of code.',
-      gradient: 'from-violet-500 to-purple-500',
+      description: 'Run your startup idea through a structured validation framework with scoring, market signals, and honest critique — all in a guided conversation.',
+      gradient: 'from-amber-500 to-orange-500',
     },
     {
       icon: TrendingUp,
       title: 'Stripe MRR Alerts',
-      description: 'Connect Stripe once and get daily revenue summaries, churn alerts, new customer notifications, and milestone celebrations pushed directly to your chat app.',
-      gradient: 'from-emerald-500 to-teal-500',
+      description: 'Connect Stripe once and get daily revenue summaries, new customer alerts, and churn notifications pushed directly to your chat — with AI-powered insights.',
+      gradient: 'from-emerald-500 to-green-500',
     },
     {
       icon: PenTool,
       title: 'Build-in-Public Drafts',
-      description: 'Generate engaging Twitter/X posts based on your actual milestones, metrics, and product updates — consistent content without the creative drain.',
-      gradient: 'from-orange-500 to-red-500',
+      description: 'Generate authentic Twitter/X threads, milestone updates, and progress posts based on your actual startup context and recent activity.',
+      gradient: 'from-violet-500 to-purple-500',
     },
     {
       icon: Search,
       title: 'Landing Page Roasting',
-      description: 'Paste any URL and get structured, actionable CRO feedback covering copy, layout, social proof, CTAs, and mobile experience in under 60 seconds.',
-      gradient: 'from-pink-500 to-rose-500',
+      description: 'Paste any URL and get instant, actionable feedback on copy, positioning, UX, and conversion — like hiring a $500/hr consultant for free.',
+      gradient: 'from-rose-500 to-pink-500',
     },
     {
       icon: Rocket,
       title: 'Launch Kit Generation',
-      description: 'Generate a complete Product Hunt launch kit — tagline, description, social posts, email announcement, and press outreach templates — all tailored to your product.',
+      description: 'Generate a complete Product Hunt launch kit with taglines, descriptions, first comments, maker stories, and a pre-launch checklist in minutes.',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Radar,
       title: 'Competitor Monitoring',
-      description: 'Track competitor websites, pricing changes, and product launches with real-time alerts so you never get blindsided by market moves.',
-      gradient: 'from-amber-500 to-yellow-500',
+      description: 'Track up to 10 competitors and get alerted when they ship features, change pricing, or launch campaigns — with strategic analysis baked in.',
+      gradient: 'from-indigo-500 to-violet-500',
     }
   ],
 
@@ -141,16 +142,17 @@ export const siteConfig: SiteConfig = {
       links: [
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
-        { title: 'Integrations', href: '/features#integrations' },
-        { title: 'Changelog', href: '/blog' }
+        { title: 'Changelog', href: '/changelog' },
+        { title: 'Integrations', href: '/features#integrations' }
       ],
     },
     {
-      title: 'Company',
+      title: 'Community',
       links: [
-        { title: 'About', href: '/about' },
         { title: 'Blog', href: '/blog' },
-        { title: 'Contact', href: '/contact' }
+        { title: 'IHVF Framework', href: '/blog/ihvf-framework' },
+        { title: 'Indie Hackers', href: 'https://indiehackers.com' },
+        { title: 'Discord', href: 'https://discord.gg/founderclaw' }
       ],
     },
     {
@@ -167,6 +169,7 @@ export const siteConfig: SiteConfig = {
 
   social: {
     discord: 'https://discord.gg/founderclaw',
+    github: 'https://github.com/founderclaw',
     twitter: 'https://twitter.com/founderclaw'
   },
 }

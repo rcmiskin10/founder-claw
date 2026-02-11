@@ -39,7 +39,7 @@ export const featuresConfig: FeaturesConfig = {
   notifications: true,
   socialListening: false,
   teams: false,
-  waitlist: false
+  waitlist: true
 }
 
 export function isFeatureEnabled(feature: keyof FeaturesConfig): boolean {
