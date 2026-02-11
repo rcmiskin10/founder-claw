@@ -24,58 +24,46 @@ export const pricingConfig: {
   model: 'freemium',
 
   defaultLimits: {
-    competitors_monitored: 0,
-    content_drafts_per_month: 0,
-    entities: 50,
-    messages_per_day: 50,
-    roasts_per_week: 1
+    entities: 50
   },
 
   plans: [
     {
       id: 'free',
       name: 'Free',
-      description: 'Get your AI co-founder up and running — no credit card required',
+      description: 'Experience the magic — connect Telegram and start chatting with your AI co-founder',
       price: { monthly: 0 },
       limits: {
-        competitors_monitored: 0,
-        content_drafts_per_month: 0,
-        entities: 50,
-        messages_per_day: 50,
-        roasts_per_week: 1
+        entities: 50
       },
       features: [
-        '50 messages per day',
-        '1 chat platform (Telegram)',
-        'IHVF idea validation',
-        '1 landing page roast per week',
-        'Community skills (read-only)',
-        'Persistent founder memory'
+        '50 AI interactions per month',
+        '1 Telegram bot connection',
+        '1 idea validation per month (IHVF)',
+        '1 landing page roast per month',
+        'Persistent project memory',
+        'No Stripe integration'
       ],
       cta: 'Get Started Free',
     },
     {
       id: 'starter',
       name: 'Starter',
-      description: 'For solo founders actively building and shipping',
-      price: { monthly: 19, yearly: 190 },
+      description: 'For indie hackers who are serious about shipping and growing',
+      price: { monthly: 19, yearly: 180 },
       priceId: process.env.STRIPE_PRICE_STARTER,
       limits: {
-        competitors_monitored: 1,
-        content_drafts_per_month: 30,
-        entities: -1,
-        messages_per_day: -1,
-        roasts_per_week: -1
+        entities: -1
       },
       features: [
-        'Unlimited messages',
-        'Full IHVF validation workflows',
+        'Unlimited AI interactions',
+        'Full IHVF idea validation',
         'Stripe integration with daily MRR alerts',
-        '30 build-in-public drafts per month',
-        'Unlimited landing page roasts',
-        '1 launch kit per month',
-        '1 competitor monitored',
-        'Single chat platform'
+        'Build-in-public drafts (10 posts/mo)',
+        'Landing page roasting (5/mo)',
+        'Competitor monitoring (2 competitors)',
+        'All chat platforms supported',
+        'Persistent project memory'
       ],
       highlighted: true,
       cta: 'Start Building',
@@ -83,53 +71,24 @@ export const pricingConfig: {
     {
       id: 'pro',
       name: 'Pro',
-      description: 'For power founders scaling their products',
-      price: { monthly: 39, yearly: 390 },
+      description: 'For established solo founders who want a full-stack AI co-founder',
+      price: { monthly: 49, yearly: 468 },
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
-        competitors_monitored: 5,
-        content_drafts_per_month: -1,
-        entities: -1,
-        messages_per_day: -1,
-        roasts_per_week: -1
+        entities: -1
       },
       features: [
         'Everything in Starter',
-        'All chat platforms connected',
-        'Unlimited content drafts',
-        'Unlimited launch kits',
-        'Up to 5 competitors monitored',
-        'Weekly competitor digest',
-        'Custom skill creation',
-        'Weekly founder report',
+        'Unlimited content drafting',
+        'Launch kit generation',
+        'Competitor monitoring (10 competitors)',
+        'Weekly strategy briefs',
         'Priority response times',
+        'Advanced analytics dashboard',
+        'Custom skill configuration',
         'Early access to new skills'
       ],
       cta: 'Go Pro',
-    },
-    {
-      id: 'team',
-      name: 'Team',
-      description: 'For small co-founding teams building together',
-      price: { monthly: 79, yearly: 790 },
-      priceId: process.env.STRIPE_PRICE_TEAM,
-      limits: {
-        competitors_monitored: -1,
-        content_drafts_per_month: -1,
-        entities: -1,
-        messages_per_day: -1,
-        roasts_per_week: -1
-      },
-      features: [
-        'Everything in Pro',
-        'Up to 3 team members',
-        'Shared context and memory',
-        'Collaborative decision logs',
-        'Unlimited competitor monitoring',
-        'Team analytics dashboard',
-        'Dedicated onboarding call'
-      ],
-      cta: 'Start Team Plan',
     }
   ],
 }

@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'FounderClaw - Your AI co-founder that lives in your chat app',
-  description: 'Managed AI co-founder for indie hackers — idea validation, MRR alerts, and build-in-public content via Telegram.',
+  title: 'FounderClaw - Your AI co-founder, right in your chat app',
+  description: 'A managed AI co-founder for indie hackers — idea validation, MRR alerts, and content drafting in Telegram.',
 };
 
 export default function RootLayout({

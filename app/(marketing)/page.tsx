@@ -97,7 +97,7 @@ function DefaultLandingPage() {
               </span>
             </h1>
 
-            <p className="mt-6 text-lg leading-8 text-neutral-600 dark:text-neutral-400 sm:text-xl">
+            <p className="mt-8 text-lg leading-8 text-neutral-600 dark:text-neutral-400 sm:text-xl max-w-2xl mx-auto">
               {hero.subheadline}
             </p>
 

@@ -67,7 +67,7 @@ export interface ThemeConfig {
 }
 
 export const themeConfig: ThemeConfig = {
-  preset: 'violet',
+  preset: 'midnight',
   borderRadius: 'lg',
   fontFamily: 'Inter',
   monoFontFamily: 'JetBrains Mono',
