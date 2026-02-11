@@ -25,7 +25,7 @@ export const featuresConfig: FeaturesConfig = {
   ai: true,
   aiChat: true,
   analytics: true,
-  api: true,
+  api: false,
   auth: true,
   billing: true,
   blog: true,

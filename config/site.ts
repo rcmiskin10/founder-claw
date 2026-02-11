@@ -56,8 +56,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: 'FounderClaw',
-  tagline: 'Your AI co-founder, right in your chat app',
-  description: 'A managed AI co-founder for indie hackers — idea validation, MRR alerts, and content drafting in Telegram.',
+  tagline: 'Your AI co-founder, living in your chat app',
+  description: 'A managed AI co-founder in Telegram that validates ideas, tracks MRR, and drafts content for indie hackers.',
   url: process.env.NEXT_PUBLIC_APP_URL
     || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
     || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
@@ -74,64 +74,64 @@ export const siteConfig: SiteConfig = {
   dashboardNav: [
     { title: 'Dashboard', href: '/dashboard' },
     { title: 'Interactions', href: '/dashboard/entities' },
-    { title: 'Connections', href: '/dashboard/connections' },
+    { title: 'Integrations', href: '/dashboard/integrations' },
     { title: 'Settings', href: '/dashboard/settings' }
   ],
 
   hero: {
-    badge: 'Powered by OpenClaw — zero DevOps required',
-    headline: 'Your AI Co-Founder Lives in',
-    headlineHighlight: 'Your Chat App',
-    subheadline: 'FounderClaw is a proactive AI co-founder for indie hackers and solo founders. It lives in Telegram, connects to your Stripe, validates your ideas with the IHVF framework, drafts build-in-public content, roasts your landing page, and sends you daily MRR alerts — all without touching a single Docker config.',
+    badge: 'Powered by OpenClaw — Zero DevOps',
+    headline: 'Your AI Co-Founder Lives',
+    headlineHighlight: 'Inside Your Telegram',
+    subheadline: 'FounderClaw is a managed AI co-founder built for indie hackers. It validates your ideas with the IHVF framework, sends daily MRR alerts from Stripe, drafts build-in-public content, roasts your landing page, and monitors competitors — all from a single chat conversation that remembers everything about your startup.',
     primaryCta: { text: 'Get Started Free', href: '/register' },
     secondaryCta: { text: 'See How It Works', href: '/features' },
-    socialProof: { text: 'Trusted by 1,200+ indie hackers', rating: '4.9/5' },
+    socialProof: { text: 'Trusted by 500+ indie hackers', rating: '4.9/5' },
   },
 
   features: [
     {
       icon: Lightbulb,
       title: 'IHVF Idea Validation',
-      description: 'Get a structured, framework-driven analysis of your startup idea with a shareable scorecard — no more gut-feel decisions.',
-      gradient: 'from-amber-500 to-orange-500',
+      description: 'Walk through structured Idea-Hypothesis-Validation-Feedback sessions that challenge your assumptions and de-risk your next build before you write a single line of code.',
+      gradient: 'from-violet-500 to-purple-500',
     },
     {
       icon: TrendingUp,
-      title: 'Daily MRR Alerts',
-      description: 'Connect your Stripe and receive proactive daily revenue updates, new customer notifications, and churn alerts right in your chat.',
-      gradient: 'from-emerald-500 to-green-500',
+      title: 'Stripe MRR Alerts',
+      description: 'Connect Stripe once and get daily revenue summaries, churn alerts, new customer notifications, and milestone celebrations pushed directly to your chat app.',
+      gradient: 'from-emerald-500 to-teal-500',
     },
     {
       icon: PenTool,
       title: 'Build-in-Public Drafts',
-      description: 'Generate polished tweets, threads, and update posts from a simple prompt — maintain your build-in-public cadence effortlessly.',
-      gradient: 'from-violet-500 to-purple-500',
+      description: 'Generate engaging Twitter/X posts based on your actual milestones, metrics, and product updates — consistent content without the creative drain.',
+      gradient: 'from-orange-500 to-red-500',
     },
     {
       icon: Search,
       title: 'Landing Page Roasting',
-      description: 'Share a URL and get instant, rubric-based feedback on your copy, design, CTA placement, and conversion potential.',
-      gradient: 'from-rose-500 to-pink-500',
+      description: 'Paste any URL and get structured, actionable CRO feedback covering copy, layout, social proof, CTAs, and mobile experience in under 60 seconds.',
+      gradient: 'from-pink-500 to-rose-500',
     },
     {
       icon: Rocket,
       title: 'Launch Kit Generation',
-      description: 'Get a complete Product Hunt launch checklist, timeline, asset list, and day-of strategy tailored to your product.',
+      description: 'Generate a complete Product Hunt launch kit — tagline, description, social posts, email announcement, and press outreach templates — all tailored to your product.',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Radar,
       title: 'Competitor Monitoring',
-      description: 'Track up to 10 competitors with website change alerts, social mention tracking, and weekly competitive intelligence briefs.',
-      gradient: 'from-indigo-500 to-violet-500',
+      description: 'Track competitor websites, pricing changes, and product launches with real-time alerts so you never get blindsided by market moves.',
+      gradient: 'from-amber-500 to-yellow-500',
     }
   ],
 
   techStack: [
-    { name: 'OpenClaw', color: 'bg-orange-600 text-white' },
     { name: 'Next.js', color: 'bg-black text-white' },
     { name: 'Supabase', color: 'bg-emerald-600 text-white' },
     { name: 'Stripe', color: 'bg-purple-600 text-white' },
+    { name: 'OpenClaw', color: 'bg-orange-600 text-white' },
     { name: 'Telegram API', color: 'bg-blue-500 text-white' }
   ],
 
@@ -141,8 +141,8 @@ export const siteConfig: SiteConfig = {
       links: [
         { title: 'Features', href: '/features' },
         { title: 'Pricing', href: '/pricing' },
-        { title: 'Changelog', href: '/changelog' },
-        { title: 'Integrations', href: '/features#integrations' }
+        { title: 'Integrations', href: '/features#integrations' },
+        { title: 'Changelog', href: '/blog' }
       ],
     },
     {
