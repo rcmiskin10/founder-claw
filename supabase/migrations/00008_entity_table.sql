@@ -9,12 +9,12 @@ CREATE TABLE public.entities (
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE NOT NULL,
 
   -- FounderInteraction fields
-  interaction_type TEXT NOT NULL,
-  timestamp TIMESTAMPTZ NOT NULL,
-  user_input TEXT NOT NULL,
-  ai_response TEXT NOT NULL,
+  interaction_type TEXT NOT NULL DEFAULT 'general_query',
   associated_project TEXT,
-  status TEXT NOT NULL DEFAULT 'completed',
+  status TEXT NOT NULL DEFAULT 'pending',
+  interaction_date TIMESTAMPTZ NOT NULL,
+  request_details TEXT NOT NULL,
+  ai_response TEXT,
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
