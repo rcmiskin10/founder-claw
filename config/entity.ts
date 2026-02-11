@@ -1,4 +1,4 @@
-import { Bot } from 'lucide-react'
+import { MessageSquare } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 export type FieldType =
@@ -44,86 +44,76 @@ export interface EntityConfig {
 }
 
 export const entityConfig: EntityConfig = {
-  name: 'AI Co-founder Instance',
-  pluralName: 'AI Co-founder Instances',
-  slug: 'ai_co_founder_instances',
-  icon: Bot,
+  name: 'FounderInteraction',
+  pluralName: 'FounderInteractions',
+  slug: 'founder_interactions',
+  icon: MessageSquare,
 
   fields: [
     {
-      name: 'instance_name',
-      label: 'Instance Name',
-      type: 'text',
-      required: true,
-      placeholder: 'e.g., My Startup AI',
-      showInList: true,
-      showInForm: true,
-    },
-    {
-      name: 'messaging_channel',
-      label: 'Messaging Channel',
+      name: 'interaction_type',
+      label: 'Interaction Type',
       type: 'select',
       required: true,
-      options: ['Telegram', 'Discord', 'WhatsApp'],
+      options: ['idea_validation', 'revenue_tracking', 'content_drafting', 'landing_page_roast', 'launch_kit_generation', 'competitor_monitoring', 'general_query'],
       showInList: true,
       showInForm: true,
     },
     {
-      name: 'current_tier',
-      label: 'Current Tier',
-      type: 'select',
+      name: 'timestamp',
+      label: 'Timestamp',
+      type: 'datetime',
       required: true,
-      options: ['Starter', 'Pro', 'Founder'],
-      defaultValue: 'Starter',
       showInList: true,
       showInForm: true,
     },
     {
-      name: 'api_key_connected',
-      label: 'API Key Connected',
-      type: 'boolean',
-      required: true,
-      defaultValue: 'false',
-      showInList: true,
-      showInForm: true,
-    },
-    {
-      name: 'stripe_account_id',
-      label: 'Stripe Account ID',
-      type: 'text',
-      required: false,
-      placeholder: 'acct_1234567890',
-      showInList: false,
-      showInForm: true,
-    },
-    {
-      name: 'business_description',
-      label: 'Business Description',
+      name: 'user_input',
+      label: 'User Input',
       type: 'rich-text',
+      required: true,
+      placeholder: 'What did you ask your AI co-founder?',
+      showInList: true,
+      showInForm: true,
+    },
+    {
+      name: 'ai_response',
+      label: 'AI Response',
+      type: 'rich-text',
+      required: true,
+      placeholder: 'The AI co-founder\'s reply.',
+      showInList: true,
+      showInForm: true,
+    },
+    {
+      name: 'associated_project',
+      label: 'Associated Project',
+      type: 'text',
       required: false,
-      placeholder: 'Tell your AI co-founder what you\'re building, who your customers are, and what stage you\'re at...',
+      placeholder: 'Which project is this related to?',
       showInList: false,
       showInForm: true,
     },
     {
-      name: 'skills_enabled',
-      label: 'Skills Enabled',
-      type: 'multi-select',
+      name: 'status',
+      label: 'Status',
+      type: 'select',
       required: true,
-      options: ['Idea Validation', 'Revenue Tracking', 'Build-in-Public Drafting', 'Launch Kit Generation', 'Competitor Monitoring', 'Landing Page Roasting', 'Cold Outreach Sequences'],
+      options: ['pending', 'completed', 'action_required', 'archived'],
+      defaultValue: 'pending',
       showInList: false,
       showInForm: true,
     }
   ],
 
-  titleField: 'instance_name',
-  descriptionField: 'business_description',
-  defaultSort: { field: 'created_at', direction: 'desc' },
+  titleField: 'interaction_type',
+  descriptionField: 'user_input',
+  defaultSort: { field: 'timestamp', direction: 'desc' },
 
   allowCreate: true,
   allowEdit: true,
   allowDelete: true,
-  allowExport: false,
+  allowExport: true,
 }
 
 export function getListFields(): EntityField[] {

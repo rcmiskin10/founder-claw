@@ -21,76 +21,115 @@ export const pricingConfig: {
   defaultLimits: PlanLimit
   plans: Plan[]
 } = {
-  model: 'free-trial',
+  model: 'freemium',
 
   defaultLimits: {
-    entities: 1
+    competitors_monitored: 0,
+    content_drafts_per_month: 0,
+    entities: 50,
+    messages_per_day: 50,
+    roasts_per_week: 1
   },
 
   plans: [
     {
-      id: 'starter',
-      name: 'Starter',
-      description: 'For side-project builders and pre-revenue founders exploring ideas',
-      price: { monthly: 19, yearly: 182 },
-      priceId: process.env.STRIPE_PRICE_STARTER,
+      id: 'free',
+      name: 'Free',
+      description: 'Get your AI co-founder up and running — no credit card required',
+      price: { monthly: 0 },
       limits: {
-        entities: 1
+        competitors_monitored: 0,
+        content_drafts_per_month: 0,
+        entities: 50,
+        messages_per_day: 50,
+        roasts_per_week: 1
       },
       features: [
-        '500 messages per day',
-        '1 messaging platform (Telegram, Discord, or WhatsApp)',
-        'IHVF idea validation framework',
-        'Build-in-public tweet drafting',
-        'Basic landing page roasting',
-        'Community support',
-        'BYOK — bring your own API key'
+        '50 messages per day',
+        '1 chat platform (Telegram)',
+        'IHVF idea validation',
+        '1 landing page roast per week',
+        'Community skills (read-only)',
+        'Persistent founder memory'
       ],
-      cta: 'Start 7-Day Free Trial',
+      cta: 'Get Started Free',
+    },
+    {
+      id: 'starter',
+      name: 'Starter',
+      description: 'For solo founders actively building and shipping',
+      price: { monthly: 19, yearly: 190 },
+      priceId: process.env.STRIPE_PRICE_STARTER,
+      limits: {
+        competitors_monitored: 1,
+        content_drafts_per_month: 30,
+        entities: -1,
+        messages_per_day: -1,
+        roasts_per_week: -1
+      },
+      features: [
+        'Unlimited messages',
+        'Full IHVF validation workflows',
+        'Stripe integration with daily MRR alerts',
+        '30 build-in-public drafts per month',
+        'Unlimited landing page roasts',
+        '1 launch kit per month',
+        '1 competitor monitored',
+        'Single chat platform'
+      ],
+      highlighted: true,
+      cta: 'Start Building',
     },
     {
       id: 'pro',
       name: 'Pro',
-      description: 'For active indie hackers with launched products generating early revenue',
-      price: { monthly: 29, yearly: 278 },
+      description: 'For power founders scaling their products',
+      price: { monthly: 39, yearly: 390 },
       priceId: process.env.STRIPE_PRICE_PRO,
       limits: {
-        entities: 2
+        competitors_monitored: 5,
+        content_drafts_per_month: -1,
+        entities: -1,
+        messages_per_day: -1,
+        roasts_per_week: -1
       },
       features: [
-        'Unlimited messages',
-        '2 messaging platforms',
         'Everything in Starter',
-        'Stripe MRR tracking with daily alerts',
-        'Competitor monitoring (3 competitors)',
-        'Product Hunt launch kit generation',
-        'Cold outreach sequence drafting',
-        'Priority support'
+        'All chat platforms connected',
+        'Unlimited content drafts',
+        'Unlimited launch kits',
+        'Up to 5 competitors monitored',
+        'Weekly competitor digest',
+        'Custom skill creation',
+        'Weekly founder report',
+        'Priority response times',
+        'Early access to new skills'
       ],
-      highlighted: true,
-      cta: 'Start 7-Day Free Trial',
+      cta: 'Go Pro',
     },
     {
-      id: 'founder',
-      name: 'Founder',
-      description: 'For serious solo founders and small teams scaling past $1K MRR',
-      price: { monthly: 49, yearly: 470 },
-      priceId: process.env.STRIPE_PRICE_FOUNDER,
+      id: 'team',
+      name: 'Team',
+      description: 'For small co-founding teams building together',
+      price: { monthly: 79, yearly: 790 },
+      priceId: process.env.STRIPE_PRICE_TEAM,
       limits: {
-        entities: -1
+        competitors_monitored: -1,
+        content_drafts_per_month: -1,
+        entities: -1,
+        messages_per_day: -1,
+        roasts_per_week: -1
       },
       features: [
-        'Unlimited messages',
-        'All messaging platforms',
         'Everything in Pro',
+        'Up to 3 team members',
+        'Shared context and memory',
+        'Collaborative decision logs',
         'Unlimited competitor monitoring',
-        'Weekly AI strategy briefs',
-        'Custom skill installation',
-        'API access for integrations',
-        'White-glove onboarding call',
-        'Priority feature requests'
+        'Team analytics dashboard',
+        'Dedicated onboarding call'
       ],
-      cta: 'Start 7-Day Free Trial',
+      cta: 'Start Team Plan',
     }
   ],
 }
