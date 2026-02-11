@@ -14,7 +14,7 @@ CREATE TABLE public.entities (
   user_input TEXT NOT NULL,
   ai_response TEXT NOT NULL,
   associated_project TEXT,
-  status TEXT NOT NULL DEFAULT 'pending',
+  status TEXT NOT NULL DEFAULT 'completed',
 
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
